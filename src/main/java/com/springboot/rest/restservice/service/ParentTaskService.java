@@ -18,8 +18,8 @@ public class ParentTaskService implements IParentTaskService{
 		return parentTaskRepository.save(parentTask);
 	}
 	
-	public Optional<ParentTask> retrieveParentTaskById(int id) {
-		return parentTaskRepository.findById(id);
+	public Iterable<ParentTask> retrieveParentTasks() {
+		return parentTaskRepository.findAll();
 	}
 	
 	public ParentTask updateParentTask(ParentTask parentTask) {

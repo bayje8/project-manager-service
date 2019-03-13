@@ -1,25 +1,17 @@
-package com.springboot.rest.restservice.entity;
+package com.springboot.rest.restservice.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
-@Entity
-public class Project {
-	@Id
-	@GeneratedValue
+public class ProjectDTO {
 	private int project_id;
 	private String project;
 	private String startDate;
 	private String endDate;
 	private int priority;
 	private int user_id;
-		
-	public Project() {
-		super();
-	}
+	private int noOfTasks;
+	private int noOfCompletedTasks;
 	
-	public Project(int project_id, String project, String startDate, String endDate, int priority, int user_id) {
+	public ProjectDTO(int project_id, String project, String startDate, String endDate, int priority, int user_id,
+			int noOfTasks, int noOfCompletedTasks) {
 		super();
 		this.project_id = project_id;
 		this.project = project;
@@ -27,7 +19,10 @@ public class Project {
 		this.endDate = endDate;
 		this.priority = priority;
 		this.user_id = user_id;
+		this.noOfTasks = noOfTasks;
+		this.noOfCompletedTasks = noOfCompletedTasks;
 	}
+	
 	public int getProject_id() {
 		return project_id;
 	}
@@ -64,7 +59,16 @@ public class Project {
 	public void setUser_id(int user_id) {
 		this.user_id = user_id;
 	}
-
-	
-
+	public int getNoOfTasks() {
+		return noOfTasks;
+	}
+	public void setNoOfTasks(int noOfTasks) {
+		this.noOfTasks = noOfTasks;
+	}
+	public int getNoOfCompletedTasks() {
+		return noOfCompletedTasks;
+	}
+	public void setNoOfCompletedTasks(int noOfCompletedTasks) {
+		this.noOfCompletedTasks = noOfCompletedTasks;
+	}
 }

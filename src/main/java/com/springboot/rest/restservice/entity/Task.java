@@ -10,26 +10,35 @@ public class Task {
 	@GeneratedValue
 	private int task_id;
 	private int parent_id;
+	private int project_id;
 	private String task;
 	private String start_date;
 	private String end_date;
 	private int priority;
-	//private String parentTask;
+	private String status;
 	
-	public int getTask_id() {
-		return task_id;
-	}
-	public Task() {
-		super();
-	}
-	public Task(int task_id, int parent_id, String task, String start_date, String end_date, int priority) {
+	public Task(int task_id, int parent_id, int project_id, String task, String start_date, String end_date,
+			int priority, String status) {
 		super();
 		this.task_id = task_id;
 		this.parent_id = parent_id;
+		this.project_id = project_id;
 		this.task = task;
 		this.start_date = start_date;
 		this.end_date = end_date;
 		this.priority = priority;
+		this.status = status;
+	}
+	
+	
+	public Task() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public int getTask_id() {
+		return task_id;
 	}
 	public void setTask_id(int task_id) {
 		this.task_id = task_id;
@@ -39,6 +48,12 @@ public class Task {
 	}
 	public void setParent_id(int parent_id) {
 		this.parent_id = parent_id;
+	}
+	public int getProject_id() {
+		return project_id;
+	}
+	public void setProject_id(int project_id) {
+		this.project_id = project_id;
 	}
 	public String getTask() {
 		return task;
@@ -64,12 +79,11 @@ public class Task {
 	public void setPriority(int priority) {
 		this.priority = priority;
 	}
-
-	/*
-	 * public String getParentTask() { return parentTask; }
-	 * 
-	 * public void setParentTask(String parentTask) { this.parentTask = parentTask;
-	 * }
-	 */	
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 	
 }

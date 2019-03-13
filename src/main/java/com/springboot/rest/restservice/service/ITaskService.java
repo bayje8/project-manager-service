@@ -2,16 +2,16 @@ package com.springboot.rest.restservice.service;
 
 import java.util.List;
 
-import com.springboot.rest.restservice.entity.CommonTask;
+import com.springboot.rest.restservice.entity.Task;
 
 public interface ITaskService {
-	List<CommonTask> retrieveAllTasks();
+	List<Task> retrieveAllTasks(int projectId);
 
-	CommonTask retrieveTaskById(int id);
+	Task retrieveTaskById(int id);
 
-	CommonTask createTask(CommonTask task);
+	Task createTask(Task task);
 
-	CommonTask editTask(CommonTask task);
+	Task editTask(Task task);
 
 	void deleteTask(int id);
 }

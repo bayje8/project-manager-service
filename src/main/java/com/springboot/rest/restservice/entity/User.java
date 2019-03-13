@@ -13,8 +13,6 @@ public class User {
 	private String firstName;
 	private String lastName;
 	private String employeeId;
-	private int projectId;
-	private int taskId;
 	
 	public int getUserId() {
 		return userId;
@@ -39,19 +37,6 @@ public class User {
 	}
 	public void setEmployeeId(String employeeId) {
 		this.employeeId = employeeId;
-	}
-	public int getProjectId() {
-		return projectId;
-	}
-	public void setProjectId(int projectId) {
-		this.projectId = projectId;
-	}
-	public int getTaskId() {
-		return taskId;
-	}
-	public void setTaskId(int taskId) {
-		this.taskId = taskId;
-	}
-	
-	
+	}	
+		
 }
