@@ -45,7 +45,7 @@ public class ProjectController {
 		return ResponseEntity.created(location).build();
 	}	
 	
-	@PutMapping("/projects/{id}")
+	@PutMapping("/projects")
 	public  ResponseEntity<ProjectDTO> updateProject(@RequestBody ProjectDTO project) {
 		ProjectDTO savedProject = projectService.createProject(project);
 
