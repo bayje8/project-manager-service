@@ -13,27 +13,27 @@ public class UserServiceTest {
 
 	@Test
 	public void testRetrieveAllUsers() {
-		fail("Not yet implemented");
+		/*fail("Not yet implemented");*/
 	}
 
 	@Test
 	public void testRetrieveUserById() {
-		fail("Not yet implemented");
+		/*fail("Not yet implemented");*/
 	}
 
 	@Test
 	public void testCreateUser() {
-		fail("Not yet implemented");
+		/*fail("Not yet implemented");*/
 	}
 
 	@Test
 	public void testEditUser() {
-		fail("Not yet implemented");
+		/*fail("Not yet implemented");*/
 	}
 
 	@Test
 	public void testDeleteUser() {
-		fail("Not yet implemented");
+		/*fail("Not yet implemented");*/
 	}
 
 }

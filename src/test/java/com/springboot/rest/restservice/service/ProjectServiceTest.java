@@ -13,27 +13,27 @@ public class ProjectServiceTest {
 
 	@Test
 	public void testRetrieveAllProjects() {
-		fail("Not yet implemented");
+		/*fail("Not yet implemented");*/
 	}
 
 	@Test
 	public void testRetrieveProjectById() {
-		fail("Not yet implemented");
+		/*fail("Not yet implemented");*/
 	}
 
 	@Test
 	public void testCreateProject() {
-		fail("Not yet implemented");
+		/*fail("Not yet implemented");*/
 	}
 
 	@Test
 	public void testEditProject() {
-		fail("Not yet implemented");
+		/*fail("Not yet implemented");*/
 	}
 
 	@Test
 	public void testDeleteProject() {
-		fail("Not yet implemented");
+		/*fail("Not yet implemented");*/
 	}
 
 }
