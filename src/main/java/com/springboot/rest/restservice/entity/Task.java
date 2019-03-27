@@ -16,9 +16,13 @@ public class Task {
 	private String end_date;
 	private int priority;
 	private String status;
-	
+	private int userId;
+	public Task() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public Task(int task_id, int parent_id, int project_id, String task, String start_date, String end_date,
-			int priority, String status) {
+			int priority, String status, int userId) {
 		super();
 		this.task_id = task_id;
 		this.parent_id = parent_id;
@@ -28,15 +32,8 @@ public class Task {
 		this.end_date = end_date;
 		this.priority = priority;
 		this.status = status;
+		this.userId = userId;
 	}
-	
-	
-	public Task() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-
 	public int getTask_id() {
 		return task_id;
 	}
@@ -85,5 +82,12 @@ public class Task {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+	public int getUserId() {
+		return userId;
+	}
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
 	
-}
+	
+	}

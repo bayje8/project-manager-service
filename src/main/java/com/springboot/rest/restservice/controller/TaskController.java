@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.springboot.rest.restservice.dto.TaskDTO;
 import com.springboot.rest.restservice.entity.Task;
+import com.springboot.rest.restservice.mapper.TaskDTOMapper;
 import com.springboot.rest.restservice.service.ITaskService;
 
 @CrossOrigin(maxAge = 3600)
@@ -26,18 +28,18 @@ public class TaskController {
 	private ITaskService taskService;
 
 	@GetMapping("/tasks/byproject/{projectId}")
-	public List<Task> retrieveAllTasks(@PathVariable int projectId) {
+	public List<TaskDTO> retrieveAllTasks(@PathVariable int projectId) {
 		return taskService.retrieveAllTasks(projectId);
 	}
 
 	@GetMapping("/tasks/{id}")
-	public Task retrieveTaskById(@PathVariable int id) {
+	public TaskDTO retrieveTaskById(@PathVariable int id) {
 		return taskService.retrieveTaskById(id);
 	}
 
 	@PostMapping("/tasks")
-	public ResponseEntity<Task> createTask(@RequestBody Task task) {
-		Task savedTask = taskService.createTask(task);
+	public ResponseEntity<TaskDTO> createTask(@RequestBody TaskDTO task) {
+		TaskDTO savedTask = taskService.createTask(task);
 
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
 				.buildAndExpand(savedTask.getTask_id()).toUri();
@@ -45,9 +47,9 @@ public class TaskController {
 		return ResponseEntity.created(location).build();
 	}
 
-	@PutMapping("/tasks/{id}")
-	public  ResponseEntity<Task>  editTask(@RequestBody Task task, @PathVariable int id) {
-		Task savedTask =  taskService.editTask(task);
+	@PutMapping("/tasks")
+	public  ResponseEntity<TaskDTO>  editTask(@RequestBody TaskDTO task) {
+		TaskDTO savedTask =  taskService.editTask(task);
 		
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
 				.buildAndExpand(savedTask.getTask_id()).toUri();

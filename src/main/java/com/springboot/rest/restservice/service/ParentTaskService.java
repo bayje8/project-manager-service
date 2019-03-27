@@ -2,6 +2,7 @@ package com.springboot.rest.restservice.service;
 
 import java.util.Optional;
 
+import org.hibernate.annotations.Parent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +25,10 @@ public class ParentTaskService implements IParentTaskService{
 	
 	public ParentTask updateParentTask(ParentTask parentTask) {
 		return parentTaskRepository.save(parentTask);
+	}
+	
+	public Optional<ParentTask> getParentTaskById(int id) {
+		return parentTaskRepository.findById(id);
 	}
 
 }

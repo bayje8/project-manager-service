@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.springboot.rest.restservice.dto.ProjectDTO;
+import com.springboot.rest.restservice.dto.TaskDTO;
 import com.springboot.rest.restservice.entity.Project;
 import com.springboot.rest.restservice.entity.Task;
 import com.springboot.rest.restservice.mapper.ProjectDTOMapper;
@@ -29,9 +30,9 @@ public class ProjectService implements IProjectService {
 		Iterable<Project> repoTaskList = projectRepository.findAll();
 		List<ProjectDTO> returnList = new ArrayList<ProjectDTO>();
 		for (Project project : repoTaskList) {
-			List<Task> taskList = taskService.retrieveAllTasks(project.getProject_id());
-			List<Task> completedTaskList = new ArrayList<Task>();
-			for (Task task : taskList) {
+			List<TaskDTO> taskList = taskService.retrieveAllTasks(project.getProject_id());
+			List<TaskDTO> completedTaskList = new ArrayList<TaskDTO>();
+			for (TaskDTO task : taskList) {
 				if (task.getStatus().equalsIgnoreCase("completed")) {
 					completedTaskList.add(task);
 				}
